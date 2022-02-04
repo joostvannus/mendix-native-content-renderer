@@ -2,7 +2,7 @@
 [![Support](https://img.shields.io/badge/Support-Community%20(no%20active%20support)-orange.svg)](https://docs.mendix.com/developerportal/app-store/app-store-content-support)
 [![Studio](https://img.shields.io/badge/Studio%20version-9.6%2B-blue.svg)](https://appstore.home.mendix.com/link/modeler/)
 ![GitHub release](https://img.shields.io/github/release/JelteMX/mendix-native-content-renderer)
-![GitHub issues](https://img.shields.io/github/issues/JelteMX/mendix-native-content-renderer)
+[![GitHub issues](https://img.shields.io/github/issues/JelteMX/mendix-native-content-renderer)](https://github.com/JelteMX/mendix-native-content-renderer/issues)
 # Mendix Native Content Renderer
 
 ![AppStoreIcon](/assets/AppStoreIcon.png)
