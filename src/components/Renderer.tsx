@@ -27,12 +27,14 @@ const Renderer = memo(({ styles, html, onPress }: Props): ReactElement => {
     };
 
     return (
-        <View style={styles.container} onLayout={onLayout}>
+        <View style={styles.html.container} onLayout={onLayout}>
             {html ? (
                 <RenderHTML
                     contentWidth={layout.width}
-                    baseStyle={styles.content}
-                    tagsStyles={styles.tags}
+                    baseStyle={styles.html.base}
+                    tagsStyles={styles.html.tags}
+                    idsStyles={styles.html.ids}
+                    classesStyles={styles.html.classes}
                     renderersProps={rendererProps}
                     source={{ html }}
                 />

@@ -4,25 +4,44 @@ import { MixedStyleDeclaration } from "react-native-render-html";
 import { Theme } from "react-base16-styling";
 
 export interface CustomStyle extends Style {
-    container: ViewStyle;
-    content: MixedStyleDeclaration;
-    tags: Record<string, MixedStyleDeclaration>;
+    html: {
+        container: ViewStyle;
+        base: MixedStyleDeclaration;
+        tags: Record<string, MixedStyleDeclaration>;
+        ids: Record<string, MixedStyleDeclaration>;
+        classes: Record<string, MixedStyleDeclaration>;
+    };
     json: {
+        container: ViewStyle;
         theme: Theme;
     };
 }
 
 export const defaultContentRendererStyle: CustomStyle = {
-    container: {
-        flex: 1,
-        height: "100%",
-        minHeight: 300
+    html: {
+        container: {
+            flex: 1,
+            height: "100%",
+            minHeight: 300
+        },
+        base: {
+            color: "#444"
+        },
+        tags: {
+            p: {
+                marginTop: 0,
+                marginBottom: 3
+            }
+        },
+        ids: {},
+        classes: {}
     },
-    content: {
-        color: "#444"
-    },
-    tags: {},
     json: {
+        container: {
+            flex: 1,
+            height: "100%",
+            minHeight: 300
+        },
         theme: {
             base00: "#000000",
             base01: "#303030",

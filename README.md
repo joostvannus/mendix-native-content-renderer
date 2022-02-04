@@ -53,18 +53,34 @@ Styling is done in normal [Mendix Native Styling](https://docs.mendix.com/refgui
 
 Class: `com_mendixlabs_widget_native_contentrenderer_ContentRenderer`
 
+Default styling:
+
 ```js
 export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
-    container: {
-        flex: 1,
-        height: "100%",
-        minHeight: 300
+    html: {
+        container: {
+            flex: 1,
+            height: "100%",
+            minHeight: 300
+        },
+        base: {
+            color: "#444"
+        },
+        tags: {
+            p: {
+                marginTop: 0,
+                marginBottom: 3
+            }
+        },
+        ids: {},
+        classes: {}
     },
-    content: {
-        color: "#444"
-    },
-    tags: {},
     json: {
+        container: {
+            flex: 1,
+            height: "100%",
+            minHeight: 300
+        },
         theme: {
             base00: "#000000",
             base01: "#303030",
@@ -90,21 +106,31 @@ export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
 The widget's style properties are as follows:
 
 ```xml
-<container>
-    <content>
+<root>
+    <html>
+        <container />
+        <base />
         <tags />
-    </content>
+        <ids />
+        <classes />
+    </html>
     <json>
+        <container />
         <theme />
     </json>
-</container>
+</root>
 ```
+
+> Note: Markdown renderer uses the same styling as HTML
 
 | Element | Style Properties | Description |
 | - | - | - |
-| `container` | This has all ViewStyle properties | |
-| `content` | This is a special one of type [`MixedStyleDeclaration`](https://meliorence.github.io/react-native-render-html/api/mixedstyledeclaration). _**Only applies to HTML/Markdown view!**_ | Describes the default style for the document, see [documentation](https://meliorence.github.io/react-native-render-html/api/renderhtmlprops#basestyle). By default the widget only sets the font color to `#444`, see [defaultStyles](/src/ui/style.ts) |
-| `tags` | [`Record<string, MixedStyleDeclaration>`](https://meliorence.github.io/react-native-render-html/api/renderhtmlprops#tagsstyles) | Used to target the styling of individual HTML tags |
+| `html/container` | This has all ViewStyle properties | |
+| `html/base` | Styles root component | See [here](https://meliorence.github.io/react-native-render-html/docs/guides/styling#props) |
+| `html/tags` | Target elements by tag name | See [here](https://meliorence.github.io/react-native-render-html/docs/guides/styling#props) |
+| `html/ids` | Target elements with `id` attribute | See [here](https://meliorence.github.io/react-native-render-html/docs/guides/styling#props) |
+| `html/classes` | Target elements with `class` attribute | See [here](https://meliorence.github.io/react-native-render-html/docs/guides/styling#props) |
+| `json/container` | This has all ViewStyle properties |  |
 | `json/theme` | [base16 color scheme](https://github.com/chriskempson/base16) | [See this documentation](https://github.com/Dean177/react-native-json-tree#theming) |
 
 

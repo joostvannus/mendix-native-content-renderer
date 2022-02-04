@@ -67,7 +67,7 @@ export function ContentRenderer({
 
     if (typeof output !== "string") {
         return (
-            <View style={styles.container}>
+            <View style={styles.json.container}>
                 <JSONTree data={output as any} theme={styles.json.theme} />
             </View>
         );
