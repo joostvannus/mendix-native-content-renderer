@@ -1,0 +1,37 @@
+{
+  "name": "contentrenderer",
+  "widgetName": "ContentRenderer",
+  "version": "1.0.0",
+  "description": "Render different types of content in your Mendix Native Mobile app",
+  "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+  "author": "Jelte Lagendijk <jelte.lagendijk@mendix.com>",
+  "engines": {
+    "node": ">=12"
+  },
+  "license": "Apache-2.0",
+  "config": {
+    "projectPath": "./tests/testProject/"
+  },
+  "packagePath": "com.mendixlabs.widget.native",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:native",
+    "build": "pluggable-widgets-tools build:native",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:native"
+  },
+  "bugs": {
+    "url": "https://github.com/Jelte Lagendijk <jelte.lagendijk@mendix.com>/contentrenderer/issues"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^9.0.0",
+    "@types/big.js": "^6.0.2",
+    "@types/react": "~17.0.1",
+    "@types/react-native": "~0.63.52"
+  },
+  "dependencies": {
+    "@react-native-community/hooks": "^2.8.1",
+    "react-native-render-html": "^6.3.4"
+  }
+}

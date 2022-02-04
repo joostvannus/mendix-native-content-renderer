@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.mendixlabs.widget.native.contentrenderer.ContentRenderer" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Content Renderer</name>
+    <description>Render different types of content in your Mendix Native Mobile app</description>
+    <studioProCategory>Content Display</studioProCategory>
+    <studioCategory>Content Display</studioCategory>
+    <properties>
+        <!-- DATA -->
+        <propertyGroup caption="Data">
+            <property key="dataExpression" type="expression" required="true" defaultValue="''">
+                <caption>Data</caption>
+                <description></description>
+                <returnType type="String" />
+            </property>
+            <property key="dataType" type="expression" required="true" defaultValue="0">
+                <caption>Type</caption>
+                <description>Type of data, expressed as a number:
+0: HTML
+1: Markdown
+
+Will revert to HTML if number is not recognized</description>
+                <returnType type="Integer" />
+            </property>
+        </propertyGroup>
+
+        <!-- LINK HANDLING -->
+        <propertyGroup caption="Link Handling">
+            <property key="onClickAction" type="action" required="false">
+                <caption>On Click Action</caption>
+                <description>If not defined, the system will handle it itself (e.g. open a browser)</description>
+            </property>
+            <property key="onClickLinkAttribute" type="attribute" required="false">
+                <caption>Link attribute</caption>
+                <description>Will be set when you click a link. This can be used in combination with On Click Action.</description>
+                <attributeTypes>
+                     <attributeType name="String" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+
+    </properties>
+</widget>
