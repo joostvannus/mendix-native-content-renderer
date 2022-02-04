@@ -3,6 +3,7 @@ import { ValueStatus } from "mendix";
 import { GestureResponderEvent, View, Linking } from "react-native";
 import { marked } from "marked";
 import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
+import JSONTree from "react-native-json-tree";
 
 import { ContentRendererProps } from "../typings/ContentRendererProps";
 import { CustomStyle, defaultContentRendererStyle } from "./ui/style";
@@ -13,7 +14,9 @@ export function ContentRenderer({
     dataExpression,
     dataType,
     onClickAction,
-    onClickLinkAttribute
+    onClickLinkAttribute,
+    jsonViewerTheme,
+    jsonViewerInvertTheme
 }: ContentRendererProps<CustomStyle>): ReactElement {
     const styles = mergeNativeStyles(defaultContentRendererStyle, style);
 
@@ -39,11 +42,22 @@ export function ContentRenderer({
     };
 
     // This might change, probably better to keep an internal state
-    const output = useMemo(() => {
+    const output: string | object = useMemo(() => {
         const output = dataExpression.value || "";
 
         if (dataType.value?.toNumber() === 1) {
+            // Type 1 = Markdown
             return marked.parse(output, {});
+        } else if (dataType.value?.toNumber() === 2) {
+            // Type 2 = JSON
+            // TODO: BETTER ERROR HANDLING!
+            try {
+                const json = JSON.parse(output);
+                return json;
+            } catch (error) {
+                console.error(error);
+                return { error: "<< Error parsing JSON, please check your data >>" };
+            }
         }
 
         return output;
@@ -51,6 +65,16 @@ export function ContentRenderer({
 
     if (!loaded) {
         return <View />;
+    }
+
+    if (typeof output !== "string") {
+        return (
+            <JSONTree
+                data={output as any}
+                theme={jsonViewerTheme.replaceAll("_", " ")}
+                invertTheme={jsonViewerInvertTheme}
+            />
+        );
     }
 
     return <Renderer styles={styles} html={output} onPress={onLinkPress} />;
