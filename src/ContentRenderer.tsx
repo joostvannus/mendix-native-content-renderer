@@ -69,11 +69,13 @@ export function ContentRenderer({
 
     if (typeof output !== "string") {
         return (
-            <JSONTree
-                data={output as any}
-                theme={jsonViewerTheme.replaceAll("_", " ")}
-                invertTheme={jsonViewerInvertTheme}
-            />
+            <View style={styles.container}>
+                <JSONTree
+                    data={output as any}
+                    theme={jsonViewerTheme.replaceAll("_", " ")}
+                    invertTheme={jsonViewerInvertTheme}
+                />
+            </View>
         );
     }
 
