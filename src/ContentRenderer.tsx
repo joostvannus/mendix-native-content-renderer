@@ -1,6 +1,7 @@
 import { ReactElement, createElement, useMemo, useState, useEffect } from "react";
 import { ValueStatus } from "mendix";
 import { GestureResponderEvent, View, Linking } from "react-native";
+import { marked } from "marked";
 import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 
 import { ContentRendererProps } from "../typings/ContentRendererProps";
@@ -10,7 +11,7 @@ import { Renderer } from "./components/Renderer";
 export function ContentRenderer({
     style,
     dataExpression,
-    // dataType,
+    dataType,
     onClickAction,
     onClickLinkAttribute
 }: ContentRendererProps<CustomStyle>): ReactElement {
@@ -19,10 +20,10 @@ export function ContentRenderer({
     // We want to prevent excessive reloading of the Renderer component, so we keep an internal state
     const [loaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        if (dataExpression.status === ValueStatus.Available) {
+        if (dataExpression.status === ValueStatus.Available && dataType.status === ValueStatus.Available) {
             setIsLoaded(true);
         }
-    }, [dataExpression.status]);
+    }, [dataExpression.status, dataType.status]);
 
     // On pressing a link we communicate the href to a Mendix attribute (if defined). Next to that we decide
     // how to handle it. If action is defined, run the action, otherwise let the system handle it.
@@ -38,11 +39,19 @@ export function ContentRenderer({
     };
 
     // This might change, probably better to keep an internal state
-    const html = useMemo(() => dataExpression.value || "", [dataExpression.value]);
+    const output = useMemo(() => {
+        const output = dataExpression.value || "";
+
+        if (dataType.value?.toNumber() === 1) {
+            return marked.parse(output, {});
+        }
+
+        return output;
+    }, [dataExpression.value, dataType.value]);
 
     if (!loaded) {
         return <View />;
     }
 
-    return <Renderer styles={styles} html={html} onPress={onLinkPress} />;
+    return <Renderer styles={styles} html={output} onPress={onLinkPress} />;
 }
