@@ -1,3 +1,8 @@
+[![Apache License](https://img.shields.io/badge/license-Apache%202.0-orange.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Support](https://img.shields.io/badge/Support-Community%20(no%20active%20support)-orange.svg)](https://docs.mendix.com/developerportal/app-store/app-store-content-support)
+[![Studio](https://img.shields.io/badge/Studio%20version-9.6%2B-blue.svg)](https://appstore.home.mendix.com/link/modeler/)
+![GitHub release](https://img.shields.io/github/release/JelteMX/mendix-native-content-renderer)
+![GitHub issues](https://img.shields.io/github/issues/JelteMX/mendix-native-content-renderer)
 # Mendix Native Content Renderer
 
 ![AppStoreIcon](/assets/AppStoreIcon.png)
@@ -81,7 +86,9 @@ The widget's style properties are as follows:
 
 ## Issues, suggestions and feature requests
 
-TBD
+> This widget is **NOT** officially supported by Mendix
+
+Report your issues on Github, see [here](https://github.com/JelteMX/mendix-native-content-renderer/issues)
 
 ## Development and contribution
 

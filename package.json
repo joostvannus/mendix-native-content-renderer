@@ -22,7 +22,7 @@
     "release": "pluggable-widgets-tools release:native"
   },
   "bugs": {
-    "url": "https://github.com/Jelte Lagendijk <jelte.lagendijk@mendix.com>/contentrenderer/issues"
+    "url": "https://github.com/JelteMX/mendix-native-content-renderer/issues"
   },
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": "^9.0.0",
