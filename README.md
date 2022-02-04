@@ -4,6 +4,8 @@
 
 Do you want to render HTML or Markdown in your Mendix Native app? Want to display a JSON?
 
+[![overview](/assets/overview-small.png)](/assets/overview-big.png)
+
 It uses the following libraries to do so:
 
 - [react-native-render-html](https://www.npmjs.com/package/react-native-json-tree) (6.3.4) - [Official website](https://meliorence.github.io/react-native-render-html/)
@@ -45,6 +47,36 @@ It uses the following libraries to do so:
 - The JSON tree has different themes. Right now we can't set this through normal theming, hence the option to select it here. Included themes can be found [here](https://github.com/reduxjs/redux-devtools/tree/75322b15ee7ba03fddf10ac3399881e302848874/src/react/themes)
 
 ## Styling
+
+Styling (except the JSON Viewer, see settings) is done in normal [Mendix Native Styling](https://docs.mendix.com/refguide/native-styling-refguide) procedures.
+
+Class: `com_mendixlabs_widget_native_contentrenderer_ContentRenderer`
+
+```js
+export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
+    container: {
+        flex: 1,
+        height: "100%",
+        minHeight: 300
+    },
+    content: {
+        color: "#444"
+    }
+};
+```
+
+The widget's style properties are as follows:
+
+```xml
+<container>
+    <content />
+</container>
+```
+
+| Element | Style Properties | Description |
+| - | - | - |
+| `container` | This has all ViewStyle properties | |
+| `content` | This is a special one of type [`MixedStyleDeclaration`](https://meliorence.github.io/react-native-render-html/api/mixedstyledeclaration). _**Only applies to HTML/Markdown view!**_ | Describes the default style for the document, see [documentation](https://meliorence.github.io/react-native-render-html/api/renderhtmlprops#basestyle). By default the widget only sets the font color to `#444`, see [defaultStyles](/src/ui/style.ts) |
 
 
 ## Issues, suggestions and feature requests
