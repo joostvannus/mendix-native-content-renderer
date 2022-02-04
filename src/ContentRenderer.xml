@@ -5,8 +5,8 @@
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Content Renderer</name>
     <description>Render different types of content in your Mendix Native Mobile app</description>
-    <studioProCategory>Content Display</studioProCategory>
-    <studioCategory>Content Display</studioCategory>
+    <studioProCategory>Display</studioProCategory>
+    <studioCategory>Display</studioCategory>
     <properties>
         <!-- DATA -->
         <propertyGroup caption="Data">

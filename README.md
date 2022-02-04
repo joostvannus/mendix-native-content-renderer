@@ -1,8 +1,10 @@
-## Mendix Native Content Renderer
+# Mendix Native Content Renderer
 
-Do you want to render custom content in your Mendix Native app? Maybe have some HTML or Markdown you want to render? You can with this widget!
+![AppStoreIcon](/assets/AppStoreIcon.png)
 
-The widget will allow you to render HTML, Markdown and JSON in your Mendix Native app. It uses the following libraries to do so:
+Do you want to render HTML or Markdown in your Mendix Native app? Want to display a JSON?
+
+It uses the following libraries to do so:
 
 - [react-native-render-html](https://www.npmjs.com/package/react-native-json-tree) (6.3.4) - [Official website](https://meliorence.github.io/react-native-render-html/)
   - Renders HTML in your React Native app
@@ -16,6 +18,7 @@ The widget will allow you to render HTML, Markdown and JSON in your Mendix Nativ
 
 - Render HTML
 - Render Markdown
+- Custom link handler for HTML/Markdown
 - Render JSON
 ## Usage
 
