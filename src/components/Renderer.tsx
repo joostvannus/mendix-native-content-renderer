@@ -32,6 +32,7 @@ const Renderer = memo(({ styles, html, onPress }: Props): ReactElement => {
                 <RenderHTML
                     contentWidth={layout.width}
                     baseStyle={styles.content}
+                    tagsStyles={styles.tags}
                     renderersProps={rendererProps}
                     source={{ html }}
                 />

@@ -47,13 +47,9 @@ It uses the following libraries to do so:
   - If you do not select an Action, it will let the system handle it (e.g. open a link in a browser)
 - Link Attribute can be used (preferably in a non-persistent Entity) to pass the link to your nanoflow. That way you have total control over what you do with any link
 
-### JSON
-
-- The JSON tree has different themes. Right now we can't set this through normal theming, hence the option to select it here. Included themes can be found [here](https://github.com/reduxjs/redux-devtools/tree/75322b15ee7ba03fddf10ac3399881e302848874/src/react/themes)
-
 ## Styling
 
-Styling (except the JSON Viewer, see settings) is done in normal [Mendix Native Styling](https://docs.mendix.com/refguide/native-styling-refguide) procedures.
+Styling is done in normal [Mendix Native Styling](https://docs.mendix.com/refguide/native-styling-refguide) procedures.
 
 Class: `com_mendixlabs_widget_native_contentrenderer_ContentRenderer`
 
@@ -66,6 +62,27 @@ export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
     },
     content: {
         color: "#444"
+    },
+    tags: {},
+    json: {
+        theme: {
+            base00: "#000000",
+            base01: "#303030",
+            base02: "#505050",
+            base03: "#b0b0b0",
+            base04: "#d0d0d0",
+            base05: "#e0e0e0",
+            base06: "#f5f5f5",
+            base07: "#ffffff",
+            base08: "#fb0120",
+            base09: "#fc6d24",
+            base0A: "#fda331",
+            base0B: "#a1c659",
+            base0C: "#76c7b7",
+            base0D: "#6fb3d2",
+            base0E: "#d381c3",
+            base0F: "#be643c"
+        }
     }
 };
 ```
@@ -74,7 +91,12 @@ The widget's style properties are as follows:
 
 ```xml
 <container>
-    <content />
+    <content>
+        <tags />
+    </content>
+    <json>
+        <theme />
+    </json>
 </container>
 ```
 
@@ -82,6 +104,8 @@ The widget's style properties are as follows:
 | - | - | - |
 | `container` | This has all ViewStyle properties | |
 | `content` | This is a special one of type [`MixedStyleDeclaration`](https://meliorence.github.io/react-native-render-html/api/mixedstyledeclaration). _**Only applies to HTML/Markdown view!**_ | Describes the default style for the document, see [documentation](https://meliorence.github.io/react-native-render-html/api/renderhtmlprops#basestyle). By default the widget only sets the font color to `#444`, see [defaultStyles](/src/ui/style.ts) |
+| `tags` | [`Record<string, MixedStyleDeclaration>`](https://meliorence.github.io/react-native-render-html/api/renderhtmlprops#tagsstyles) | Used to target the styling of individual HTML tags |
+| `json/theme` | [base16 color scheme](https://github.com/chriskempson/base16) | [See this documentation](https://github.com/Dean177/react-native-json-tree#theming) |
 
 
 ## Issues, suggestions and feature requests

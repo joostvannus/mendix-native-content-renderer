@@ -1,7 +1,7 @@
 {
   "name": "contentrenderer",
   "widgetName": "ContentRenderer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Render different types of content in your Mendix Native Mobile app",
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",

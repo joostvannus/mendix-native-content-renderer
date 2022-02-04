@@ -14,9 +14,7 @@ export function ContentRenderer({
     dataExpression,
     dataType,
     onClickAction,
-    onClickLinkAttribute,
-    jsonViewerTheme,
-    jsonViewerInvertTheme
+    onClickLinkAttribute
 }: ContentRendererProps<CustomStyle>): ReactElement {
     const styles = mergeNativeStyles(defaultContentRendererStyle, style);
 
@@ -70,11 +68,7 @@ export function ContentRenderer({
     if (typeof output !== "string") {
         return (
             <View style={styles.container}>
-                <JSONTree
-                    data={output as any}
-                    theme={jsonViewerTheme.replaceAll("_", " ")}
-                    invertTheme={jsonViewerInvertTheme}
-                />
+                <JSONTree data={output as any} theme={styles.json.theme} />
             </View>
         );
     }

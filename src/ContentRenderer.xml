@@ -42,58 +42,5 @@ Will revert to HTML if number is not recognized</description>
             </property>
         </propertyGroup>
 
-        <!-- JSON -->
-        <propertyGroup caption="JSON">
-            <propertyGroup caption="Theme">
-                <property key="jsonViewerTheme" type="enumeration" defaultValue="bright">
-                    <caption>JSON Viewer Theme</caption>
-                    <description>Color theme for JSON Viewer (this cannot be done in styling right now). Default: bright (white background)</description>
-                    <enumerationValues>
-                        <enumerationValue key="threezerotwofour">threezerotwofour</enumerationValue>
-                        <enumerationValue key="apathy">apathy</enumerationValue>
-                        <enumerationValue key="ashes">ashes</enumerationValue>
-                        <enumerationValue key="atelier_dune">atelier dune</enumerationValue>
-                        <enumerationValue key="atelier_forest">atelier forest</enumerationValue>
-                        <enumerationValue key="atelier_heath">atelier heath</enumerationValue>
-                        <enumerationValue key="atelier_lakeside">atelier lakeside</enumerationValue>
-                        <enumerationValue key="atelier_seaside">atelier seaside</enumerationValue>
-                        <enumerationValue key="bespin">bespin</enumerationValue>
-                        <enumerationValue key="brewer">brewer</enumerationValue>
-                        <enumerationValue key="bright">bright</enumerationValue>
-                        <enumerationValue key="chalk">chalk</enumerationValue>
-                        <enumerationValue key="codeschool">codeschool</enumerationValue>
-                        <enumerationValue key="colors">colors</enumerationValue>
-                        <enumerationValue key="default">default</enumerationValue>
-                        <enumerationValue key="eighties">eighties</enumerationValue>
-                        <enumerationValue key="embers">embers</enumerationValue>
-                        <enumerationValue key="flat">flat</enumerationValue>
-                        <enumerationValue key="google">google</enumerationValue>
-                        <enumerationValue key="grayscale">grayscale</enumerationValue>
-                        <enumerationValue key="green_screen">green screen</enumerationValue>
-                        <enumerationValue key="harmonic16">harmonic16</enumerationValue>
-                        <enumerationValue key="hopscotch">hopscotch</enumerationValue>
-                        <enumerationValue key="isotope">isotope</enumerationValue>
-                        <enumerationValue key="marrakesh">marrakesh</enumerationValue>
-                        <enumerationValue key="mocha">mocha</enumerationValue>
-                        <enumerationValue key="monokai">monokai</enumerationValue>
-                        <enumerationValue key="ocean">ocean</enumerationValue>
-                        <enumerationValue key="paraiso">paraiso</enumerationValue>
-                        <enumerationValue key="pop">pop</enumerationValue>
-                        <enumerationValue key="railscasts">railscasts</enumerationValue>
-                        <enumerationValue key="shapeshifter">shapeshifter</enumerationValue>
-                        <enumerationValue key="solarized">solarized</enumerationValue>
-                        <enumerationValue key="summerfruit">summerfruit</enumerationValue>
-                        <enumerationValue key="tomorrow">tomorrow</enumerationValue>
-                        <enumerationValue key="london_tube">london tube</enumerationValue>
-                        <enumerationValue key="twilight">twilight</enumerationValue>
-                    </enumerationValues>
-                </property>
-                <property key="jsonViewerInvertTheme" type="boolean" defaultValue="false">
-                    <caption>Invert Theme</caption>
-                    <description></description>
-                </property>
-            </propertyGroup>
-        </propertyGroup>
-
     </properties>
 </widget>
