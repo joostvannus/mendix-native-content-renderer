@@ -45,7 +45,8 @@ It uses the following libraries to do so:
 - Upon clicking a link, you can let the widget decide what to do:
   - If you select an Action, that will be used by the widget when you click any hyperlink
   - If you do not select an Action, it will let the system handle it (e.g. open a link in a browser)
-- Link Attribute can be used (preferably in a non-persistent Entity) to pass the link to your nanoflow. That way you have total control over what you do with any link
+- Link Attribute can be used (preferably in a non-persistent Entity) to pass the link to your nanoflow. That way you have total control over what you do with any link.
+  - Note: Make sure the attribute and entity is editable. The widget will **not** give you an error when it is not editable.
 
 ## Styling
 
@@ -129,6 +130,32 @@ The widget's style properties are as follows:
 | `json/container` | This has all ViewStyle properties |  |
 | `json/theme` | [base16 color scheme](https://github.com/chriskempson/base16) | [See this documentation](https://github.com/Dean177/react-native-json-tree#theming) |
 
+## Example (with onClick Event)
+
+Consider the following scenario:
+
+1. We have a **non-persistent View** entity, which has two attributes: **Content** & **UrlClicked**
+
+![](assets/example-01.png)
+
+2. We configure the widget as follows:
+
+![](assets/example-02a.png)
+
+On click we execute a Nanoflow (IVK_ClickLink), which has the same View object as an input parameter. We also configure our Link Attribute to UrlClicked.
+
+![](assets/example-02b.png)
+
+3. Nanoflow
+
+![](assets/example-03.png)
+
+4. What happens?
+
+- Let's say we have a text with `<p>This is a text with a <a href="link1">link</a></p>`. Notice the `href`
+- The user clicks this link
+- The widget will set the Link Attribute (in our example **UrlClicked**) to `link1`
+- It will execute the **IVK_ClickLink** nanoflow, where we can retrieve the `href` contents (in this example `link1`) from the **UrlClicked** attribute
 
 ## Issues, suggestions and feature requests
 
