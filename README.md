@@ -59,9 +59,7 @@ Default styling:
 export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
     html: {
         container: {
-            flex: 1,
-            height: "100%",
-            minHeight: 300
+
         },
         base: {
             color: "#444"
@@ -77,9 +75,7 @@ export const com_mendixlabs_widget_native_contentrenderer_ContentRenderer = {
     },
     json: {
         container: {
-            flex: 1,
-            height: "100%",
-            minHeight: 300
+            flex: 1
         },
         theme: {
             base00: "#000000",

@@ -20,9 +20,9 @@ export interface CustomStyle extends Style {
 export const defaultContentRendererStyle: CustomStyle = {
     html: {
         container: {
-            flex: 1,
-            height: "100%",
-            minHeight: 300
+            // flex: 1,
+            // height: "100%",
+            // minHeight: 300
         },
         base: {
             color: "#444"
@@ -38,9 +38,9 @@ export const defaultContentRendererStyle: CustomStyle = {
     },
     json: {
         container: {
-            flex: 1,
-            height: "100%",
-            minHeight: 300
+            flex: 1
+            // height: "100%",
+            // minHeight: 300
         },
         theme: {
             base00: "#000000",
