@@ -1,11 +1,11 @@
 {
-  "name": "contentrenderer",
+  "name": "pvcontentrenderer",
   "widgetName": "ContentRenderer",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "private": true,
   "description": "Render different types of content in your Mendix Native Mobile app",
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",
-  "author": "Jelte Lagendijk <jelte.lagendijk@mendix.com>",
+  "author": "Original: Jelte Lagendijk <jelte.lagendijk@mendix.com>, modified by Joost van Nus <joost.van.nus@plegt-vos.nl>",
   "engines": {
     "node": ">=12"
   },
@@ -13,7 +13,7 @@
   "config": {
     "projectPath": "./tests/testProject/"
   },
-  "packagePath": "com.mendixlabs.widget.native",
+  "packagePath": "nl.plegtvos.widget.native",
   "scripts": {
     "start": "pluggable-widgets-tools start:native",
     "build": "pluggable-widgets-tools build:native",
@@ -33,9 +33,11 @@
     "@types/react-native": "~0.63.52"
   },
   "dependencies": {
+    "@native-html/iframe-plugin": "^2.6.1",
     "@react-native-community/hooks": "^2.8.1",
     "marked": "^4.0.12",
     "react-native-json-tree": "^1.3.0",
-    "react-native-render-html": "^6.3.4"
+    "react-native-render-html": "^6.3.4",
+    "react-native-webview": "~11.26.1"
   }
 }

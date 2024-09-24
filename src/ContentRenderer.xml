@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="com.mendixlabs.widget.native.contentrenderer.ContentRenderer" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+<widget id="nl.plegtvos.widget.native.contentrenderer.ContentRenderer" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
         supportedPlatform="Native"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
-    <name>Content Renderer</name>
+    <name>PV Content Renderer (Iframe support added)</name>
     <description>Render different types of content in your Mendix Native Mobile app</description>
     <studioProCategory>Display</studioProCategory>
     <studioCategory>Display</studioCategory>
@@ -18,7 +18,7 @@
             <property key="dataType" type="expression" required="true" defaultValue="0">
                 <caption>Type</caption>
                 <description>Type of data, expressed as a number:
-0: HTML
+0: HTML /w IFrame support
 1: Markdown
 2: JSON
 
